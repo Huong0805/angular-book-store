@@ -1,0 +1,62 @@
+<div class="row product-detail" *ngIf="product">
+    <div class="col-md-5">
+        <img class="product-image"
+            [src]="product.imageUrl || ''"
+            [alt]="product.title">
+    </div>
+    <div class="col-md-7">
+        <div>
+            <div class="header border-bottom">
+                <h1 class="title">{{ product.title }}</h1>
+                <div class="brand">
+                    <span class="author">Tác giả: <a href="#">{{ product.author }}</a></span>
+                </div>
+            </div>
+            <div class="body">
+                <div class="group">
+                    <p class="price">{{ product.finalPrice | price }}</p>
+                    <p class="original-price first-child">
+                      Tiết kiệm: <span>{{ product.finalPrice | discount:product.regularPrice }}</span> ({{ product.regularPrice-product.finalPrice | price }})
+                    </p>
+                    <p class="original-price">Giá thị trường: {{ product.regularPrice | price }}</p>
+                </div>
+                <div class="group border-top quantity-buy-favorite">
+                    <app-quantity (changeQuantity)="handleChangedQuantity($event)"></app-quantity>
+                    <div class="group-button buy-favorite">
+                        <button class="btn btn-add-to-cart">
+                            <span class="tikicon icon-add-to-cart2x" style="margin-right: 5px;"></span>Chọn mua
+                        </button>
+                        <button class="btn-add-favorite" title="Thêm vào yêu thích">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 detail-info">
+        <h3>Thông tin chi tiết</h3>
+        <table class="table table-bordered" style="width: 50%;">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nhà xuất bản</td>
+                    <td>{{ product.publisher }}</td>
+                </tr>
+                <tr>
+                    <td>Ngày xuất bản</td>
+                    <td>{{ product.publishedDate }}</td>
+                </tr>
+                <tr>
+                    <td>Kích thước</td>
+                    <td>{{ product.size }}</td>
+                </tr>
+                <tr>
+                    <td>Số trang</td>
+                    <td>{{ product.pageCount }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="fit-body check-out">
+  <div class="row">
+    <div class="col-md-9">
+      <form>
+        <div class="form-group">
+          <h3>1. Chọn hình thức giao hàng</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="shipping-methods" id="shipping-methods-free" value="option1">
+            <label class="form-check-label" for="shipping-methods-free">
+                &nbsp;Miễn phí
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="shipping-methods" id="shipping-methods-standard" value="option2">
+            <label class="form-check-label" for="shipping-methods-standard">
+                &nbsp;Giao tiêu chuẩn
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <h3>2. Chọn hình thức thanh toán</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="payment-methods" id="payment-methods-cash" value="option1">
+            <label class="form-check-label" for="payment-methods-cash">
+                &nbsp;Thanh toán tiền mặt khi nhận hàng
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="payment-methods" id="payment-methods-visa" value="option2">
+            <label class="form-check-label" for="payment-methods-visa">
+                &nbsp;Thanh toán bằng thẻ quốc tế Visa, Master, JCB
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3">
+      <app-shopping-summary></app-shopping-summary>
+      <button type="submit" class="btn btn-danger btn-lg">&nbsp;&nbsp;ĐẶT MUA&nbsp;&nbsp;</button>
+    </div>
+  </div>
+</div>

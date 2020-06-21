@@ -1,0 +1,112 @@
+.tikicon.icon-tiki_short {
+    background-image: url('~/assets/img/sprite.png');
+    background-position: -150px 0;
+    width: 50px;
+    height: 33px;
+}
+  
+.nav-control {
+    font-weight: 400;
+    font-size: 1.2rem;
+    white-space: nowrap;
+  
+    @media screen and (min-width: 992px) {
+      padding-left: 10px;
+      .nav-link {
+        padding-left: 10px;
+      }
+    }
+}
+.tikicon.icon-tracking {
+	background-image: url('~/assets/img/sprite.png');
+	background-position: -362px -52px;
+	width: 22px;
+	height: 22px;
+}
+.notification-box {
+    position: relative;
+}
+.notify-item {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    max-width: 300px;
+  
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      max-width: none;
+    }
+  
+    .icon {
+      padding: 5px;
+      img {
+        width: 24px;
+      }
+    }
+    .notify-content {
+      width: calc(100% - 24px);
+      display: flex;
+      flex-direction: column;
+  
+      .content {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+}
+.tikicon.icon-notification {
+    background-image: url('~/assets/img/sprite.png');
+    background-position: -304px -174px;
+    width: 24px;
+    height: 24px;
+}
+.notification-count {
+    font-size: 10px;
+    float: left;
+    position: absolute;
+    left: 23px;
+    top: 3px;
+    display: block;
+    text-align: center;
+    z-index: 2;
+    font-weight: 300;
+    width: 21px;
+    height: 21px;
+    background: rgb(255, 83, 83);
+    border-radius: 50%;
+    padding: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(24, 158, 255);
+    border-image: initial;
+    @media screen and (max-width: 991px) {
+      left: 58px;
+      top: 20px;
+    }
+}
+.tikicon.icon-user {
+    background-image: url('~/assets/img/sprite.png');
+    background-position: -362px -25px;
+    width: 22px;
+    height: 22px;
+}
+.tikicon.icon-cart {
+    background-image: url('~/assets/img/sprite.png');
+    background-position: -333px -252px;
+    width: 19px;
+    height: 18px;
+}
+.cart-count {
+    color: rgb(74, 74, 74);
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    background: rgb(253, 216, 53);
+    border-radius: 2px;
+    padding: 0px 6px;
+}

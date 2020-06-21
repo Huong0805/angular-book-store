@@ -1,0 +1,51 @@
+.product-item {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 20px rgba(0,0,0,.1);
+    }
+
+    .content .title .tikicon.icon-tikinow {
+      position: relative;
+      display: inline-block;
+      width: 53px;
+      height: 15px;
+      margin-right: 7px;
+      background-image: url(https://salt.tikicdn.com/desktop/img/tiki-now-15.png);
+      background-size: 53px 15px;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+    .price-sale>span {
+      display: block;
+    }
+    .product-image {
+      width: 100%;
+    }
+    p {
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      font-size: 13px;
+      font-weight: 300;
+    }
+    .author {
+      color: #777;
+      font-size: 11px;
+    }
+    .final-price {
+      font-size: 16px;
+      font-weight: 550;
+    }
+    .sale-tag {
+      font-size: 13px;
+      color: #787878;
+      font-weight: 300;
+    }
+    .price-regular {
+      font-size: 13px;
+      color: #787878;
+      text-decoration: line-through;
+      font-weight: 300;
+    }
+}

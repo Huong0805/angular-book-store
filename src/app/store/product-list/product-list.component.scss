@@ -1,0 +1,26 @@
+.product-sidebar {
+    padding-right: 0;
+}
+.product-list-wrapper {
+    background-color: #ffffff;
+    margin: 0;
+}
+.product-list {
+    &__option-box {
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    &__product-list-box {
+        font-size: 1.2rem;
+
+        .row {
+            margin: 0 -5px;
+        }
+        .col-md-3 {
+            padding: 0 5px;
+        }
+        .pagination {
+            padding-top: 15px;
+        }
+    }
+}

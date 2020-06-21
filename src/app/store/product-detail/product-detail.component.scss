@@ -1,0 +1,116 @@
+.product-detail {
+    padding: 15px 0;
+    margin: 0;
+    background-color: #ffffff;
+    .product-image {
+      width: 100%;
+    }
+    .title {
+      color: rgb(51, 51, 51);
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 30px;
+      margin: 0px;
+    }
+    .brand {
+      padding-bottom: 15px;
+      .author {
+        color: rgb(51, 51, 51);
+        font-size: 13px;
+        font-weight: 400;
+        margin: 0px 20px 0px 0px;
+      }
+    }
+    .body {
+      .group {
+        padding: 15px 0 10px 0;
+      }
+      .price {
+        color: rgb(255, 52, 37);
+        font-size: 19px;
+        font-weight: 500;
+        margin: 0px;
+      }
+      .original-price {
+        color: rgb(155, 155, 155);
+        font-size: 13px;
+        font-weight: 300;
+        span {
+          color: rgb(255, 52, 37);
+          font-weight: 400;
+        }
+      }
+      .label {
+        color: rgb(123, 123, 123);
+        font-size: 11px;
+        margin: 0px 0px 6px;
+      }
+      .quantity-buy-favorite {
+        display: flex;
+      }
+      .btn-add-to-cart {
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 57, 69);
+        cursor: pointer;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        min-width: 190px;
+        width: 100%;
+        height: 40px;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        border-radius: 4px;
+        outline: none;
+      }
+      .tikicon.icon-add-to-cart2x {
+        background-image: url('~/assets/img/sprite.png');
+        background-position: -362px 0px;
+        width: 25px;
+        height: 20px;
+      }
+      .btn-add-favorite {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        color: rgb(133, 133, 133);
+        font-size: 32px;
+        background-color: transparent;
+        padding-left: 15px;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        outline: none;
+        &:hover {
+          color: rgb(242, 120, 113);
+        }
+      }
+      .buy-favorite {
+        display: flex;
+        align-items: flex-end;
+        padding-left: 15px;
+      }
+    }
+    .detail-info {
+      h3 {
+        font-weight: 600;
+        margin: 25px 0 5px 0;
+      }
+      table tbody tr td:first-child {
+        color: rgb(79, 79, 79);
+        font-size: 13px;
+        font-weight: 700;
+        background: rgb(239, 239, 239);
+      }
+    }
+}

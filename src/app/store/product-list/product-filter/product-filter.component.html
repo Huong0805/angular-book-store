@@ -1,0 +1,21 @@
+<nav class="product-list__option-box navbar navbar-expand-lg">
+    <div class="navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Hàng mới <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Bán chạy <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Giảm giá nhiều <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchValue">
+            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+              [ngModel]="searchValue" (ngModelChange)="searchValue = $event.value"> -->
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()">Search</button>
+        </div>
+    </div>
+</nav>

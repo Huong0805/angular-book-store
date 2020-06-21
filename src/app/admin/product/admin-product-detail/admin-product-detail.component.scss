@@ -1,0 +1,22 @@
+.tikicon.icon-add-to-cart2x {
+    background-image: url('~/assets/img/sprite.png');
+    background-position: -362px 0px;
+    width: 25px;
+    height: 20px;
+  }
+
+  .price {
+    color: rgb(255, 52, 37);
+    font-size: 19px;
+    font-weight: 500;
+    margin: 0px;
+  }
+  .original-price {
+    color: rgb(155, 155, 155);
+    font-size: 13px;
+    font-weight: 300;
+    span {
+      color: rgb(255, 52, 37);
+      font-weight: 400;
+    }
+  }

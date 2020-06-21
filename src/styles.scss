@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #f4f4f4;
+  font-size: 1.4rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding-top: 60px;
+}
+
+.label-link {
+  text-decoration: none;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.fit-body {
+  min-height: calc(100vh - 146px);
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.modal-body input, .modal-footer button{
+  font-size: 1.4rem;
+}
+
+.ng-touched.ng-invalid {
+  border-color: #dc3545;
+
+  &+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+  }
+
+  &+.invalid-tooltip {
+    display: block;
+    right: 0;
+    font-size: 80%;
+  }
+}

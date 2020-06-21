@@ -1,0 +1,102 @@
+<header class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <i class="tikicon icon-tiki_short"></i>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+            <div class="form-inline my-2 my-lg-0">
+                <div class="collapse navbar-collapse nav-control" id="navbar">
+                    <i class="tikicon icon-tracking"></i>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Theo dõi<br>đơn hàng
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse nav-control notification-box" id="navbar">
+                    <i class="tikicon icon-notification"></i>
+                    <span class="notification-count">{{ notifys.length }}</span>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Thông báo<br>của tôi
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a *ngFor="let notify of notifys" class="dropdown-item notify-item" href="#" [title]="notify.content">
+                                    <div class="icon"><img
+                                            src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/discount.png">
+                                    </div>
+                                    <div class="notify-content"><span class="content">{{notify.content}}</span><span
+                                            class="date">{{notify.date}}</span></div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" style="text-align: center;">Xem tất cả thông báo</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse nav-control" id="navbar" *ngIf="!isLoggedInUser">
+                    <i class="tikicon icon-user"></i>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="user-auth" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Đăng nhập <br> tài khoản
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="user-auth">
+                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#loginModal">
+                                    Đăng nhập
+                                </a>
+                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#registerModal">
+                                    Đăng ký
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse nav-control" id="navbar" *ngIf="isLoggedInUser">
+                    <i class="tikicon icon-user"></i>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="user-controls" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Chào<br>{{ user.name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="user-controls">
+                                <a class="dropdown-item" href="#">Đơn hàng của tôi</a>
+                                <a class="dropdown-item" href="#">Sản phẩm yêu thích</a>
+                                <a class="dropdown-item" href="#" *ngIf="user.isAdmin">Quản lý đơn hàng</a>
+                                <a class="dropdown-item" href="#" *ngIf="user.isAdmin">Quản lý sản phẩm</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/" (click)="logout()">Thoát tài khoản</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse nav-control" id="navbar">
+                    <i class="tikicon icon-cart"></i>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <span class="nav-link" style="cursor: pointer;">
+                                Giỏ hàng
+                                <span class="cart-count">{{ cartCount}}</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
