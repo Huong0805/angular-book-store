@@ -36,8 +36,8 @@ export class ProductListComponent implements OnInit {
   }
 
   onSelectedProduct(productId): void {
-    //this.selectProduct.emit(productId);
-    this.storeService.setSelectedProductId(productId);
+    this.selectProduct.emit(productId);
+    // this.storeService.setSelectedProductId(productId);
   }
 
   search(searchValue): void {

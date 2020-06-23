@@ -1,20 +1,33 @@
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Author</th>
-        <th scope="col">Publisher</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let p of products">
-        <td>{{p.title }}</td>
-        <td>{{p.author }}</td>
-        <td>{{p.publisher }}</td>
-        <td><button type="button" class="btn btn-info" (click)="viewDetail(p)">Detail</button></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row">
+  <div class="col-md-10"></div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-info" (click)="viewAddForm()">Add product</button>
+  </div>
+</div>
+<br>
 
-  <app-admin-product-detail [product]="selectedProduct"></app-admin-product-detail>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{ p.title }}</td>
+      <td>{{ p.author }}</td>
+      <td>{{ p.publisher }}</td>
+      <td>
+        <button type="button" class="btn btn-info" (click)="viewDetail(p)">
+          Detail
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-admin-product-detail  [product]="selectedProduct"></app-admin-product-detail>
+<app-admin-product-form *ngIf="isAdding"></app-admin-product-form>

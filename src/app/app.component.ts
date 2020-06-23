@@ -18,4 +18,8 @@ export class AppComponent {
   handleSelectedProduct(productId: string): void {
     this.selectedProductId = productId;
   }
+
+  handleYesConfirm() {
+    console.log('btn Yes was clicked!');
+  }
 }
