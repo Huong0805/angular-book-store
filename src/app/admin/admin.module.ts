@@ -4,18 +4,21 @@ import { AdminProductDetailComponent } from './product/admin-product-detail/admi
 import { AdminProductListComponent } from './product/admin-product-list/admin-product-list.component';
 import { AdminProductFormComponent } from './product/admin-product-form/admin-product-form.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminProductReactiveFormComponent } from './product/admin-product-reactive-form/admin-product-reactive-form.component';
 
 @NgModule({
-  declarations: [AdminProductDetailComponent, AdminProductListComponent, AdminProductFormComponent],
+  declarations: [AdminProductDetailComponent, AdminProductListComponent, AdminProductFormComponent, AdminProductReactiveFormComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AdminProductDetailComponent,
     AdminProductListComponent,
-    AdminProductFormComponent
+    AdminProductFormComponent,
+    AdminProductReactiveFormComponent
   ]
 }
 )

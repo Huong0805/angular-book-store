@@ -25,5 +25,6 @@ export class AdminProductFormComponent implements OnInit {
       publisher:publisher?publisher.value:''
     });
     this.productService.createProduct(product);
+    //this.productService.createProduct(product).subscribe(result=>console.log(result));
   }
 }

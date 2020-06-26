@@ -17,6 +17,9 @@ export class AdminProductListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+
+    //this.productService.getProducts().subscribe(result=>this.products=result );
+
     this.products = products;
 
     this.productService.$newProduct.subscribe(p=>{

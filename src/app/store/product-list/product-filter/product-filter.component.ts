@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { LoggingServiceService } from 'src/app/shared/services/logging-service.service';
 
 @Component({
   selector: 'app-product-filter',
@@ -9,7 +10,7 @@ export class ProductFilterComponent implements OnInit {
   @Output() searchSubmit = new EventEmitter<string>();
 
   searchValue = '';
-  constructor() { }
+  constructor(private logService: LoggingServiceService) { }
 
   ngOnInit(): void {
   }
