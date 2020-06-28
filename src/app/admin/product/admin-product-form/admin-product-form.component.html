@@ -18,7 +18,7 @@
                 <label for="inputPublisher">Publisher</label>
                 <select class="form-control" ngModel #publisher="ngModel" name="publisher" required>
                   <option selected></option>
-                  <option *ngFor="let p of publishers" [value]="p.$key">{{p.value}}</option>
+                  <option *ngFor="let p of publishers" [value]="p.id">{{p.value}}</option>
                 </select>
                 <div class="invalid-tooltip">
                     Please provide a publisher.

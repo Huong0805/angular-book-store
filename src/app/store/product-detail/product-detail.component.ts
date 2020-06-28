@@ -16,12 +16,12 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   constructor(private storeService: StoreService) { }
 
   ngOnChanges(productId: {previousValue, currentValue, firstChange}) {
-    this.product = products.find(ele => ele.$key === this.productId);
+    this.product = products.find(ele => ele.id === this.productId);
   }
 
   ngOnInit(): void {
     this.storeService.selectedProductId$.subscribe(pid => {
-      this.product = products.find(ele => ele.$key === pid);
+      this.product = products.find(ele => ele.id === pid);
     });
   }
 

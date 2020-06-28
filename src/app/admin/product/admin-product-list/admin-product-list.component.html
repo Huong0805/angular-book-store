@@ -24,11 +24,14 @@
         <button type="button" class="btn btn-info" (click)="viewDetail(p)">
           Detail
         </button>
+        <button type="button" class="btn btn-success" (click)="editProduct(p)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="deleteProduct(p)">Delete</button>
       </td>
     </tr>
   </tbody>
 </table>
 
 <app-admin-product-detail  [product]="selectedProduct"></app-admin-product-detail>
-<!-- <app-admin-product-form *ngIf="isAdding"></app-admin-product-form> -->
-<app-admin-product-reactive-form *ngIf="isAdding"></app-admin-product-reactive-form>
+<app-admin-product-form *ngIf="isAdding"></app-admin-product-form>
+<!-- <app-admin-product-reactive-form *ngIf="isAdding"></app-admin-product-reactive-form> -->
+<app-admin-product-reactive-form [product]="selectedProduct" *ngIf="isEditting"></app-admin-product-reactive-form>

@@ -32,7 +32,7 @@ export class ProductListComponent implements OnInit {
   }
 
   trackByFn(index, item) {
-    return item.$key;
+    return item.id;
   }
 
   onSelectedProduct(productId): void {

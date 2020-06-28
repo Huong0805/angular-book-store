@@ -9,12 +9,12 @@ export class ShoppingCart {
 
     for (let productId in itemsMap) {
       let item = itemsMap[productId];
-      this.items.push(new ShoppingCartItem({ ...item, $key: productId }));
+      this.items.push(new ShoppingCartItem({ ...item, id: productId }));
     }
   }
 
   getQuantity(product: Product) {
-    const item = this.itemsMap[product.$key];
+    const item = this.itemsMap[product.id];
     return item ? item.quantity : 0;
   }
 
