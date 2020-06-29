@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class AdminProductFormComponent implements OnInit {
 
-  defaultTikiNow='false';
+  defaultTikiNow=false;
   publishers=[];
   subcription:Subscription;
   
