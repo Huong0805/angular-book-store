@@ -2,6 +2,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { products } from 'src/app/shared/mock-data/product-list';
 import { Product } from 'src/app/shared/models/product';
 import { StoreService } from '../services/store.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/shared/services/product.service';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 
 @Component({
@@ -16,28 +20,46 @@ export class ProductListComponent implements OnInit {
   publishers: string[];
   authors: string[];
   originProducts = products;
+  private unsubscribeAll: Subject<any>;
+  
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private productService: ProductService) {
+      this.unsubscribeAll = new Subject();
+     }
 
-  constructor(private storeService: StoreService) { }
-
-  ngOnInit(): void {
-    this.products = products;
-    const publishersObj = {};
-    const authorsObj = {};
-    products.forEach(ele => {
-      publishersObj[ele.publisher] = ele.publisher;
-      authorsObj[ele.author] = ele.author;
-    });
-    this.publishers = Object.keys(publishersObj);
-    this.authors = Object.keys(authorsObj);
-  }
+    ngOnInit(): void {
+      // this.products = products;
+  
+      this.productService.getProducts().pipe(
+        takeUntil(this.unsubscribeAll)
+      ).subscribe(result => {
+        this.products = result;
+        // this.isFetchData = false;
+        this.setFilters();
+      });
+    }
+  
+    setFilters() {
+      const publishersObj = {};
+      const authorsObj = {};
+      this.products.forEach(ele => {
+        publishersObj[ele.publisher] = ele.publisher;
+        authorsObj[ele.author] = ele.author;
+      });
+      this.publishers = Object.keys(publishersObj);
+      this.authors = Object.keys(authorsObj);
+    }
 
   trackByFn(index, item) {
     return item.id;
   }
 
   onSelectedProduct(productId): void {
-    this.selectProduct.emit(productId);
+    //this.selectProduct.emit(productId);
     // this.storeService.setSelectedProductId(productId);
+    this.router.navigate(['product', productId], { relativeTo: this.route});
   }
 
   search(searchValue): void {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { Subject, throwError } from 'rxjs';
+import { Subject, throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
@@ -58,5 +58,11 @@ export class ProductService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
+  }
+
+  getProductById(pid): Observable<Product> {
+    return this.http.get(`https://book-store-2bb87.firebaseio.com/product/${pid}.json`).pipe(
+      map(result => ({ ...new Product(result), id: pid}))
+    );
   }
 }

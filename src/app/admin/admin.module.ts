@@ -6,13 +6,15 @@ import { AdminProductFormComponent } from './product/admin-product-form/admin-pr
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminProductReactiveFormComponent } from './product/admin-product-reactive-form/admin-product-reactive-form.component';
+import { AdminRoutingModule } from './admin-routing.module';
 
 @NgModule({
   declarations: [AdminProductDetailComponent, AdminProductListComponent, AdminProductFormComponent, AdminProductReactiveFormComponent],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AdminRoutingModule
   ],
   exports: [
     AdminProductDetailComponent,
